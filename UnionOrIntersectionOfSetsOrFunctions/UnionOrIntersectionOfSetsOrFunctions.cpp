@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-#include <algorithm>
 #include <vector>
 
 int main()
@@ -23,6 +22,7 @@ int main()
     for (size_t k = 0; k < intersectOfVectors.size(); k++)
     {
         std::cout << intersectOfVectors[k] << std::endl;
+        // Outputs: 5 15
     }
 
     return 0;
