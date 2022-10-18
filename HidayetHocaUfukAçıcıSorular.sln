@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnionOrIntersectionOfSetsOr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FunctionWithinFunction", "FunctionWithinFunction\FunctionWithinFunction.vcxproj", "{17C84B49-A3EE-406D-BE88-F8DCE2C64FCF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UsingCMathLibrary", "UsingCMathLibrary\UsingCMathLibrary.vcxproj", "{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{17C84B49-A3EE-406D-BE88-F8DCE2C64FCF}.Release|x64.Build.0 = Release|x64
 		{17C84B49-A3EE-406D-BE88-F8DCE2C64FCF}.Release|x86.ActiveCfg = Release|Win32
 		{17C84B49-A3EE-406D-BE88-F8DCE2C64FCF}.Release|x86.Build.0 = Release|Win32
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Debug|x64.ActiveCfg = Debug|x64
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Debug|x64.Build.0 = Debug|x64
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Debug|x86.ActiveCfg = Debug|Win32
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Debug|x86.Build.0 = Debug|Win32
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Release|x64.ActiveCfg = Release|x64
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Release|x64.Build.0 = Release|x64
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Release|x86.ActiveCfg = Release|Win32
+		{AA2E8D46-AAB5-484A-A253-BCDC9BA7783C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
