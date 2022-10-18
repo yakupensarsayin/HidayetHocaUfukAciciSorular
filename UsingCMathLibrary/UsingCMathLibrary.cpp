@@ -5,7 +5,7 @@ int main()
 {
     setlocale(LC_ALL, "Turkish");
 
-    while (true)
+    do
     {
         int operationNumber = 0;
         bool isOperationNumberUsable = false;
@@ -17,20 +17,28 @@ int main()
         std::string secondQuestion = "";
         std::string operationName = "";
 
-
         while (isOperationNumberUsable == false)
         {
             myfunctions::ClearConsoleWindow();
             myfunctions::ShowMainMenu();
-            
 
-            std::cin >> operationNumber;
-
-            if (std::cin.fail())
+            bool couldGetInput = false;
+            do
             {
-                myfunctions::ClearInputStream();
-                break;
-            }
+                std::cin >> operationNumber;
+
+                if (std::cin.fail())
+                {
+                    myfunctions::ClearInputStream();
+                    myfunctions::ClearConsoleWindow();
+                    myfunctions::ShowMainMenu();
+                }
+                else
+                {
+                    couldGetInput = true;
+                }
+
+            } while (couldGetInput == false);
 
             switch (operationNumber)
             {
@@ -127,67 +135,94 @@ int main()
             case 12:
                 return 0;
             default:
+                isOperationNumberUsable = false;
                 break;
             }
         }
 
-        bool isOperationSucceeded = false;
+        myfunctions::ClearConsoleWindow();
 
-        while (isOperationSucceeded == false)
+        if (questionType == 1)
         {
+            double param = 0;
+
+            bool couldGetInput = false;
+            do
+            {
+                std::cout << selectedOperation;
+                std::cout << firstQuestion;
+                std::cin >> param;
+
+                if (std::cin.fail())
+                {
+                    myfunctions::ClearInputStream();
+                    myfunctions::ClearConsoleWindow();
+                }
+                else
+                {
+                    couldGetInput = true;
+                }
+
+            } while (couldGetInput == false);
+
+            double arr[1] = { param };
+            MathOperation[0]->SetEntry(arr);
+
+            std::cout << operationName << "(" << param << ") = " << MathOperation[0]->MakeCalculation() << std::endl;
+
+            system("pause");
+        }
+        else if (questionType == 2)
+        {
+            double param1 = 0, param2 = 0;
+
+            bool couldGetInput = false;
+            do
+            {
+                std::cout << selectedOperation;
+                std::cout << firstQuestion;
+                std::cin >> param1;
+
+                if (std::cin.fail())
+                {
+                    myfunctions::ClearInputStream();
+                    myfunctions::ClearConsoleWindow();
+                }
+                else
+                {
+                    couldGetInput = true;
+                }
+
+            } while (couldGetInput == false);
+
             myfunctions::ClearConsoleWindow();
 
-            while (isOperationSucceeded == false)
+            couldGetInput = false;
+            do
             {
-                if (questionType == 1)
+                std::cout << selectedOperation;
+                std::cout << firstQuestion << param1 << std::endl;
+                std::cout << secondQuestion;
+                std::cin >> param2;
+
+                if (std::cin.fail())
                 {
-                    double degree = 0;
-                    std::cout << selectedOperation;
-                    std::cout << firstQuestion;
-                    std::cin >> degree;
-
-                    if (std::cin.fail())
-                    {
-                        myfunctions::ClearInputStream();
-                        break;
-                    }
-
-                    double arr[1] = { degree };
-                    MathOperation[0]->SetEntry(arr);
-                    std::cout << operationName << "(" << degree << ") = " << MathOperation[0]->MakeCalculation() << std::endl;
-                    isOperationSucceeded = true;
-                    system("pause");
+                    myfunctions::ClearInputStream();
+                    myfunctions::ClearConsoleWindow();
                 }
-                else if (questionType == 2)
+                else
                 {
-                    double base = 0, exponent = 0;
-
-                    std::cout << selectedOperation;
-
-                    std::cout << firstQuestion;
-                    std::cin >> base;
-                    if (std::cin.fail())
-                    {
-                        myfunctions::ClearInputStream();
-                        break;
-                    }
-
-                    std::cout << secondQuestion;
-                    std::cin >> exponent;
-                    if (std::cin.fail())
-                    {
-                        myfunctions::ClearInputStream();
-                        break;
-                    }
-
-                    double arr[2] = { base, exponent };
-                    MathOperation[0]->SetEntry(arr);
-                    std::cout << operationName << "(" << base << ", " << exponent << ") = " << MathOperation[0]->MakeCalculation() << std::endl;
-                    isOperationSucceeded = true;
-                    system("pause");
+                    couldGetInput = true;
                 }
-            }
+
+            } while (couldGetInput == false);
+         
+            double arr[2] = { param1, param2};
+            MathOperation[0]->SetEntry(arr);
+            std::cout << operationName << "(" << param1 << ", " << param2 << ") = " << MathOperation[0]->MakeCalculation() << std::endl;
+
+            system("pause");
         }
 
-    }
+    }while (true);
 }
